@@ -50,7 +50,7 @@ function Navigation() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-5 bg-gradient-to-b from-black/50 to-transparent">
         <Link to="/" className="text-2xl font-bold tracking-tight text-[#F6F6F6]">
-          GIE
+          GOD IS ENOUGH
         </Link>
         <div className="flex items-center gap-4">
           <ThemeToggle />
@@ -76,7 +76,7 @@ function Navigation() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5">
               <Link to="/" className="text-2xl font-bold tracking-tight text-[#F6F6F6]" onClick={() => setIsMenuOpen(false)}>
-                GIE
+                GOD IS ENOUGH
               </Link>
               <div className="flex items-center gap-4">
                 <ThemeToggle />
