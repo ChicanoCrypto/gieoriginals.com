@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ArrowLeft, Heart, Share2, Truck, RotateCcw, Shield, X, ShoppingBag, Minus, Plus, Trash2, Sun, Moon, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
-import { products } from './HomePage';
+import { products } from '../products';
 
 // Theme Toggle Component
 function ThemeToggle() {
