@@ -11,7 +11,7 @@
   --bg-tertiary: #F2F2F0;
   --text-primary: #F6F6F6;
   --text-secondary: #B8B8B8;
-  --accent: #B8FF3D;
+  --accent: #CB8E16;
   --accent-text: #0B0B0C;
   --border-color: rgba(246, 246, 246, 0.1);
   --card-bg: #1a1a1a;
@@ -23,10 +23,11 @@
   --bg-tertiary: #0B0B0C;
   --text-primary: #0B0B0C;
   --text-secondary: #5A5A5A;
-  --accent: #B8FF3D;
+  --accent: #CB8E16;
   --accent-text: #0B0B0C;
   --border-color: rgba(11, 11, 12, 0.1);
   --card-bg: #FFFFFF;
+    /* #B8FF3D */
 }
 
 @layer base {

@@ -76,7 +76,7 @@ function Navigation() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5">
               <Link to="/" className="text-2xl font-bold tracking-tight text-[#F6F6F6]" onClick={() => setIsMenuOpen(false)}>
-                GOD IS ENOUGH
+                GIE
               </Link>
               <div className="flex items-center gap-4">
                 <ThemeToggle />
@@ -357,7 +357,7 @@ function HeroSection() {
           <circle cx="200" cy="200" r="195" fill="none" stroke="#F6F6F6" strokeWidth="2" opacity="0.9" />
           <text fill="#F6F6F6" fontSize="24" fontWeight="700" letterSpacing="8">
             <textPath href="#circlePath">
-              GIE ORIGINALS • GIE ORIGINALS • GIE ORIGINALS •
+              GOD IS ENOUGH • GIE ORIGINALS • GOD IS ENOUGH •
             </textPath>
           </text>
         </svg>
