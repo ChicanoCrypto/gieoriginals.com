@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default dark theme colors */
+  --bg-primary: #0B0B0C;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #F2F2F0;
+  --text-primary: #F6F6F6;
+  --text-secondary: #B8B8B8;
+  --accent: #B8FF3D;
+  --accent-text: #0B0B0C;
+  --border-color: rgba(246, 246, 246, 0.1);
+  --card-bg: #1a1a1a;
+}
+
+[data-theme="light"] {
+  --bg-primary: #F2F2F0;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #0B0B0C;
+  --text-primary: #0B0B0C;
+  --text-secondary: #5A5A5A;
+  --accent: #B8FF3D;
+  --accent-text: #0B0B0C;
+  --border-color: rgba(11, 11, 12, 0.1);
+  --card-bg: #FFFFFF;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+}
+
+@layer components {
+  .sticker-pill {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .sticker-circle {
+    @apply flex items-center justify-center w-28 h-28 rounded-full text-xs font-semibold tracking-widest uppercase;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .sticker-square {
+    @apply flex flex-col items-center justify-center rounded-[36px] p-8;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase transition-transform hover:scale-105 hover:-translate-y-0.5;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide uppercase transition-all;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--border-color);
+  }
+  
+  .section-pinned {
+    @apply w-screen h-screen relative overflow-hidden;
+  }
+  
+  .grain-overlay {
+    @apply fixed inset-0 pointer-events-none z-50 opacity-[0.04];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  .headline-xl {
+    font-size: clamp(56px, 10vw, 160px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.85;
+  }
+  
+  .headline-lg {
+    font-size: clamp(48px, 8vw, 120px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+  
+  .headline-md {
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  /* Theme-aware card */
+  .theme-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Theme-aware input */
+  .theme-input {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .theme-input::placeholder {
+    color: var(--text-secondary);
+  }
+
+  .theme-input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-theme-primary {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-theme-secondary {
+    background-color: var(--bg-secondary);
+  }
+
+  .text-theme-primary {
+    color: var(--text-primary);
+  }
+
+  .text-theme-secondary {
+    color: var(--text-secondary);
+  }
+
+  .border-theme {
+    border-color: var(--border-color);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+/* Animation keyframes */
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* Stripe Elements styling */
+.StripeElement {
+  background-color: transparent !important;
+}
+
+/* Admin panel specific styles */
+.admin-sidebar {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+/* Card hover effects */
+.product-card {
+  will-change: transform, opacity;
+}
+
+/* Responsive adjustments for headlines */
+@media (max-width: 768px) {
+  .headline-xl {
+    font-size: clamp(40px, 12vw, 80px);
+  }
+  
+  .headline-lg {
+    font-size: clamp(36px, 10vw, 64px);
+  }
+  
+  .headline-md {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+}
+
+/* Ensure text remains visible during loading */
+.font-display {
+  font-display: swap;
+}
+
+/* Prevent layout shift */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-rotate-slow,
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Table styling for admin */
+table {
+  border-collapse: collapse;
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Chart tooltip styling */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+/* Video background styles */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  @apply w-10 h-10 rounded-full flex items-center justify-center transition-all;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Image gallery styles */
+.image-gallery-thumb {
+  @apply cursor-pointer rounded-xl overflow-hidden transition-all;
+  border: 2px solid transparent;
+}
+
+.image-gallery-thumb:hover {
+  border-color: var(--accent);
+}
+
+.image-gallery-thumb.active {
+  border-color: var(--accent);
+}

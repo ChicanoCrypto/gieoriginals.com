@@ -1,0 +1,94 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure pinned sections stack correctly */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Image grayscale with cool tint effect */
+.grayscale {
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* Enhanced button hover states */
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+/* Sticker animations */
+.sticker-pill,
+.sticker-circle,
+.sticker-square {
+  will-change: transform;
+  transition: transform 0.2s ease;
+}
+
+.sticker-pill:hover,
+.sticker-circle:hover,
+.sticker-square:hover {
+  transform: scale(1.04);
+}
+
+/* Product card hover effects */
+.product-card {
+  will-change: transform, opacity;
+}
+
+/* Responsive adjustments for headlines */
+@media (max-width: 768px) {
+  .headline-xl {
+    font-size: clamp(40px, 12vw, 80px);
+  }
+  
+  .headline-lg {
+    font-size: clamp(36px, 10vw, 64px);
+  }
+  
+  .headline-md {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+}
+
+/* Ensure text remains visible during loading */
+.font-display {
+  font-display: swap;
+}
+
+/* Prevent layout shift */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #B8FF3D;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-rotate-slow,
+  .animate-float {
+    animation: none;
+  }
+}
